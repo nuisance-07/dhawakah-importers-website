@@ -3,6 +3,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getVehicles } from "@/data/vehicles";
 import VehicleCard from "@/components/ui/VehicleCard";
 
+export const revalidate = 0;
+
 export const metadata = {
   title: "Inventory | Dhawakah Importers",
   description: "Browse our premium selection of luxury vehicles.",

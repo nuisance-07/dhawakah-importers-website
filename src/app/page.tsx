@@ -5,6 +5,8 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import CallToAction from "@/components/home/CallToAction";
 import PageTransition from "@/components/ui/PageTransition";
 
+export const revalidate = 0;
+
 export default function Home() {
   return (
     <PageTransition>

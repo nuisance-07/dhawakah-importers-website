@@ -6,6 +6,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ImageGallery from "@/components/ui/ImageGallery";
 import { ArrowLeft, MessageCircle, Phone, CheckCircle2 } from "lucide-react";
 
+export const revalidate = 0;
+
 export default async function VehicleDetailPage({ params }: { params: { slug: string } }) {
   // Await the params before accessing slug
   const { slug } = await params;
