@@ -94,7 +94,7 @@ export default function ContactPage() {
               <div className="h-[400px] rounded-sm overflow-hidden border border-white/10 bg-black">
                 {/* Embed Google Map targeting Jundan Plaza, Mombasa */}
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3979.803529241853!2d39.66442627588107!3d-4.060195695914569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1840131ee635ea79%3A0xc85502ab841eb9bb!2sJundan%20Plaza!5e0!3m2!1sen!2ske!4v1704123456789!5m2!1sen!2ske" 
+                  src="https://maps.google.com/maps?q=Jundan%20Plaza,%20Mombasa,%20Kenya&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
