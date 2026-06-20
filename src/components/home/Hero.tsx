@@ -5,13 +5,17 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image / Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/vehicles/bmw-x7.jpg')",
-        }}
-      >
+      {/* Background Video / Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/vehicles/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0c]" />
       </div>
 
