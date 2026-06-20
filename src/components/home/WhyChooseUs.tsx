@@ -33,8 +33,8 @@ function CarIcon(props: any) {
 export default function WhyChooseUs() {
   return (
     <section className="py-24 bg-dark-surface relative overflow-hidden">
-      {/* Abstract Background Element */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      {/* Abstract Background Element (Hidden on mobile to prevent rendering glitches) */}
+      <div className="hidden md:block absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu" />
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
