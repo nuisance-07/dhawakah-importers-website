@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import Tracker from "@/components/analytics/Tracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main className="flex-grow flex flex-col">{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <Tracker />
       </body>
     </html>
   );
