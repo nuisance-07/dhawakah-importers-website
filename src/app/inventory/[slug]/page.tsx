@@ -65,9 +65,20 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
             <ScrollReveal delay={0.2}>
               <h2 className="font-heading text-2xl font-semibold text-white mb-6 uppercase tracking-wide">Vehicle Description</h2>
-              <p className="text-gray-300 leading-relaxed text-lg">
+              <p className="text-gray-300 leading-relaxed text-lg mb-8">
                 {vehicle.description}
               </p>
+
+              {vehicle.features && vehicle.features.length > 0 && (
+                <ul className="space-y-3">
+                  {vehicle.features.map((feature: string, idx: number) => (
+                    <li key={idx} className="flex items-center gap-3 text-gray-200 text-lg">
+                      <div className="w-2 h-2 bg-primary rotate-45 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </ScrollReveal>
           </div>
 

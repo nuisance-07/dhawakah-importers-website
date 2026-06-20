@@ -21,6 +21,7 @@ const VehicleSchema = new mongoose.Schema({
   category: { type: String, required: true },
   images: [{ type: String }],
   description: { type: String, required: true },
+  features: [{ type: String }],
   featured: { type: Boolean, default: false }
 }, { timestamps: true });
 
@@ -38,6 +39,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-1.jpeg"],
     description: "The ultimate 2024 Toyota Land Cruiser 250. Combining legendary off-road capability with modern luxury and advanced technology.",
+    features: ["2.8L 1GD-FTV Turbo Diesel Engine", "201 Horsepower", "Full-Time 4WD with Low Range", "8-Speed Automatic Transmission", "Premium Leather Trim", "Toyota Safety Sense 3.0", "Multi-Terrain Select"],
     featured: true
   },
   {
@@ -51,6 +53,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-2.jpeg"],
     description: "Experience unparalleled performance with the Mercedes Benz GLE 63s. A masterpiece of engineering featuring a handcrafted AMG engine.",
+    features: ["4.0L V8 Biturbo with EQ Boost", "603 Horsepower", "AMG Performance 4MATIC+ AWD", "AMG SPEEDSHIFT TCT 9-Speed", "Burmester Surround Sound System", "AMG Ride Control+ Air Suspension", "Exclusive Nappa Leather"],
     featured: true
   },
   {
@@ -64,6 +67,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-3.jpeg"],
     description: "The classic and reliable Toyota Land Cruiser 200 series. Built for the toughest terrains while maintaining premium comfort.",
+    features: ["4.5L Twin-Turbo V8 Diesel Engine", "268 Horsepower", "Full-Time 4WD System", "6-Speed Automatic Transmission", "Premium Wood Grain Interior", "Kinetic Dynamic Suspension System (KDSS)", "7-Seater Configuration"],
     featured: false
   },
   {
@@ -77,6 +81,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-4.jpeg"],
     description: "The dynamic 2025 Range Rover Sport HP525. Delivering sporting luxury, refined performance, and unmistakable design.",
+    features: ["4.4L Twin-Turbo V8 Engine", "523 Horsepower", "All-Wheel Drive (AWD)", "8-Speed Automatic Transmission", "Meridian 3D Surround Sound", "Dynamic Air Suspension", "Premium Semi-Aniline Leather"],
     featured: true
   },
   {
@@ -90,6 +95,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-5.jpeg"],
     description: "A commanding presence. The Lexus LX570 blends remarkable off-road ability with a lavishly appointed interior.",
+    features: ["5.7L V8 Engine", "383 Horsepower", "Full-Time 4WD", "8-Speed Automatic Transmission", "Mark Levinson Reference Audio", "Adaptive Variable Suspension", "Semi-Aniline Leather Seating"],
     featured: false
   },
   {
@@ -103,6 +109,7 @@ const seedVehicles = [
     category: "Sedan",
     images: ["/vehicles/import-6.jpeg"],
     description: "The 2025 BMW 5 Series Sedan sets the benchmark for executive sedans with its athletic elegance and cutting-edge innovations.",
+    features: ["3.0L TwinPower Turbo Inline-6 Engine", "375 Horsepower", "xDrive All-Wheel Drive", "8-Speed Sport Automatic Transmission", "Bowers & Wilkins Surround Sound", "Curved Display & iDrive 8.5", "M Sport Package"],
     featured: true
   },
   {
@@ -116,6 +123,7 @@ const seedVehicles = [
     category: "Coupe",
     images: ["/vehicles/import-7.jpeg"],
     description: "Iconic American muscle. The 2021 Chevrolet Camaro Coupe delivers thrilling performance and an aggressive stance.",
+    features: ["6.2L V8 Engine", "455 Horsepower", "Rear-Wheel Drive (RWD)", "10-Speed Automatic Transmission", "Bose Premium Audio System", "Magnetic Ride Control", "Recaro Performance Seats"],
     featured: false
   },
   {
@@ -129,6 +137,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-8.jpeg"],
     description: "The flagship 2025 Lexus LX 600 redefines ultra-luxury SUVs with a refined twin-turbo V6 and unparalleled craftsmanship.",
+    features: ["3.4L Twin-Turbo V6 Engine", "409 Horsepower", "Full-Time 4WD", "10-Speed Direct-Shift Automatic", "Mark Levinson 25-Speaker Audio", "Active Height Control Suspension", "Ultra-Luxury VIP Seating"],
     featured: true
   },
   {
@@ -142,6 +151,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-9.jpeg"],
     description: "The pinnacle of luxury SUVs. The Mercedes Maybach GLS 600 offers a first-class experience with exquisite materials and extraordinary comfort.",
+    features: ["4.0L V8 Biturbo with Mild Hybrid", "550 Horsepower", "4MATIC Fully Variable AWD", "9G-TRONIC 9-Speed Automatic", "First-Class Rear Executive Seating", "E-Active Body Control Suspension", "Burmester High-End 3D Surround"],
     featured: true
   },
   {
@@ -155,6 +165,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-10.jpeg"],
     description: "The bold and provocative BMW X6 Coupe. Featuring a sloping roofline and exhilarating driving dynamics.",
+    features: ["3.0L TwinPower Turbo Inline-6", "335 Horsepower", "xDrive All-Wheel Drive", "8-Speed Sport Automatic", "Harman Kardon Surround Sound", "Adaptive M Suspension", "Illuminated Kidney Grille"],
     featured: false
   },
   {
@@ -168,6 +179,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-11.jpeg"],
     description: "The legendary G-Wagon. The Mercedes Benz AMG G63 pairs its iconic boxy design with a roaring V8 biturbo engine.",
+    features: ["4.0L V8 Biturbo Engine", "577 Horsepower", "AMG Performance 4MATIC AWD", "AMG SPEEDSHIFT TCT 9-Speed", "Burmester Surround Sound", "AMG Ride Control Suspension", "Iconic G-Class Box Design"],
     featured: true
   },
   {
@@ -181,6 +193,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-12.jpeg"],
     description: "The sports car of SUVs. The 2020 Porsche Cayenne delivers thrilling handling and premium refinement.",
+    features: ["3.0L Turbocharged V6", "335 Horsepower", "Active All-Wheel Drive", "8-Speed Tiptronic S", "Bose Surround Sound System", "Porsche Active Suspension Management", "Panoramic Roof System"],
     featured: false
   },
   {
@@ -194,6 +207,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-13.jpeg"],
     description: "The versatile Toyota LC Prado V-XL. Renowned for its durability, space, and premium features suitable for any journey.",
+    features: ["2.8L Turbo Diesel Engine", "174 Horsepower", "Full-Time 4WD", "6-Speed Automatic Transmission", "JBL Premium Audio System", "Kinetic Dynamic Suspension (KDSS)", "Premium Leather & Wood Trim"],
     featured: false
   },
   {
@@ -207,6 +221,7 @@ const seedVehicles = [
     category: "SUV",
     images: ["/vehicles/import-14.jpeg"],
     description: "The grandest BMW ever built. The 2025 BMW X7 SUV offers three rows of pure luxury and imposing presence.",
+    features: ["3.0L TwinPower Turbo Inline-6", "375 Horsepower", "xDrive All-Wheel Drive", "8-Speed Sport Automatic", "Bowers & Wilkins Diamond Surround", "2-Axle Air Suspension", "Sensafin Premium Upholstery"],
     featured: true
   },
   {
@@ -220,6 +235,7 @@ const seedVehicles = [
     category: "Sedan",
     images: ["/vehicles/import-15.jpeg"],
     description: "The perfect balance of everyday usability and AMG performance. The E53 boasts a potent electrified inline-6 and stunning aesthetics.",
+    features: ["3.0L Inline-6 Turbo with EQ Boost", "429 Horsepower", "AMG Performance 4MATIC+ AWD", "AMG SPEEDSHIFT TCT 9-Speed", "Burmester Surround Sound", "AMG Ride Control+ Suspension", "AMG Performance Steering Wheel"],
     featured: false
   }
 ];

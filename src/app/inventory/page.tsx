@@ -2,6 +2,7 @@ import PageTransition from "@/components/ui/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getVehicles } from "@/data/vehicles";
 import VehicleCard from "@/components/ui/VehicleCard";
+import FilterSidebar from "@/components/inventory/FilterSidebar";
 
 export const revalidate = 0;
 
@@ -10,8 +11,32 @@ export const metadata = {
   description: "Browse our premium selection of luxury vehicles.",
 };
 
-export default async function InventoryPage() {
-  const vehicles = await getVehicles();
+export default async function InventoryPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const allVehicles = await getVehicles();
+  
+  // Extract search params
+  // Next.js 14 App Router gives us searchParams as a prop directly
+  const typeFilter = typeof searchParams.type === 'string' ? searchParams.type : null;
+  const makeFilter = typeof searchParams.make === 'string' ? searchParams.make : null;
+
+  // Apply filters
+  let filteredVehicles = allVehicles;
+
+  if (typeFilter) {
+    filteredVehicles = filteredVehicles.filter(
+      (v) => v.category.toLowerCase() === typeFilter.toLowerCase()
+    );
+  }
+
+  if (makeFilter) {
+    filteredVehicles = filteredVehicles.filter((v) =>
+      v.title.toLowerCase().includes(makeFilter.toLowerCase())
+    );
+  }
 
   return (
     <PageTransition>
@@ -33,58 +58,25 @@ export default async function InventoryPage() {
       <div className="container mx-auto px-4 md:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-8">
           
-          {/* Filters Sidebar (Static for now) */}
+          {/* Filters Sidebar (Client Component) */}
           <div className="w-full lg:w-64 shrink-0">
-            <ScrollReveal direction="right" delay={0.1}>
-              <div className="bg-black border border-white/5 p-6 rounded-sm sticky top-24">
-                <h3 className="font-heading font-semibold text-white mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4">
-                  Filters
-                </h3>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-300 mb-3">Vehicle Type</h4>
-                    <div className="space-y-2">
-                      {["All", "SUV", "Sedan", "Hatchback"].map((type) => (
-                        <label key={type} className="flex items-center gap-3 cursor-pointer group">
-                          <div className="w-4 h-4 border border-white/20 rounded-sm group-hover:border-primary transition-colors flex items-center justify-center">
-                            {type === "All" && <div className="w-2 h-2 bg-primary rounded-sm" />}
-                          </div>
-                          <span className="text-sm text-gray-400 group-hover:text-white transition-colors">{type}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-300 mb-3">Make</h4>
-                    <div className="space-y-2">
-                      {["BMW", "Mercedes Benz", "Toyota", "Porsche"].map((make) => (
-                        <label key={make} className="flex items-center gap-3 cursor-pointer group">
-                          <div className="w-4 h-4 border border-white/20 rounded-sm group-hover:border-primary transition-colors" />
-                          <span className="text-sm text-gray-400 group-hover:text-white transition-colors">{make}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
+            <FilterSidebar />
           </div>
 
           {/* Grid */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {vehicles.map((vehicle, index) => (
-                <ScrollReveal key={vehicle.id} delay={index * 0.1} direction="up">
-                  <VehicleCard vehicle={vehicle} />
-                </ScrollReveal>
-              ))}
-            </div>
-            
-            {vehicles.length === 0 && (
-              <div className="text-center py-20 text-gray-400">
-                No vehicles found matching your criteria.
+            {filteredVehicles.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {filteredVehicles.map((vehicle, index) => (
+                  <ScrollReveal key={vehicle.slug} delay={index * 0.1} direction="up">
+                    <VehicleCard vehicle={vehicle} />
+                  </ScrollReveal>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-24 bg-black/30 border border-white/5 rounded-sm">
+                <h3 className="text-xl text-white font-semibold mb-2">No vehicles found</h3>
+                <p className="text-gray-400">Try adjusting your filters to see more results.</p>
               </div>
             )}
           </div>
