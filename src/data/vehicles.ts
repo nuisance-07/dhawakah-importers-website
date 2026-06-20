@@ -14,6 +14,7 @@ export interface Vehicle {
   category: string;
   images: string[];
   description: string;
+  features?: string[];
   featured: boolean;
 }
 
@@ -32,6 +33,7 @@ function mapToPlainObject(doc: any): Vehicle {
     category: doc.category,
     images: doc.images,
     description: doc.description,
+    features: doc.features || [],
     featured: doc.featured,
   };
 }

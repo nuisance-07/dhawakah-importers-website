@@ -13,6 +13,7 @@ export interface IVehicle {
   category: string;
   images: string[];
   description: string;
+  features?: string[];
   featured: boolean;
 }
 
@@ -28,6 +29,7 @@ const VehicleSchema = new mongoose.Schema<IVehicle>({
   category: { type: String, required: true },
   images: [{ type: String }],
   description: { type: String, required: true },
+  features: [{ type: String }],
   featured: { type: Boolean, default: false }
 }, {
   timestamps: true
