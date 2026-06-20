@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import PageTransition from "@/components/ui/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { getVehicles } from "@/data/vehicles";
@@ -19,9 +20,9 @@ export default async function InventoryPage({
   const allVehicles = await getVehicles();
   
   // Extract search params
-  // Next.js 14 App Router gives us searchParams as a prop directly
   const typeFilter = typeof searchParams.type === 'string' ? searchParams.type : null;
   const makeFilter = typeof searchParams.make === 'string' ? searchParams.make : null;
+  const priceFilter = typeof searchParams.price === 'string' ? searchParams.price : null;
 
   // Apply filters
   let filteredVehicles = allVehicles;
@@ -33,9 +34,24 @@ export default async function InventoryPage({
   }
 
   if (makeFilter) {
-    filteredVehicles = filteredVehicles.filter((v) =>
-      v.title.toLowerCase().includes(makeFilter.toLowerCase())
-    );
+    filteredVehicles = filteredVehicles.filter((v) => {
+      const searchStr = makeFilter.toLowerCase();
+      // Handle Mercedes Maybach edge case
+      if (searchStr === "mercedes benz") {
+        return v.title.toLowerCase().includes("mercedes") || v.title.toLowerCase().includes("maybach");
+      }
+      return v.title.toLowerCase().includes(searchStr);
+    });
+  }
+
+  if (priceFilter) {
+    if (priceFilter === "Under 10M") {
+      filteredVehicles = filteredVehicles.filter(v => v.price < 10000000);
+    } else if (priceFilter === "10M - 20M") {
+      filteredVehicles = filteredVehicles.filter(v => v.price >= 10000000 && v.price <= 20000000);
+    } else if (priceFilter === "Over 20M") {
+      filteredVehicles = filteredVehicles.filter(v => v.price > 20000000);
+    }
   }
 
   return (
@@ -60,7 +76,9 @@ export default async function InventoryPage({
           
           {/* Filters Sidebar (Client Component) */}
           <div className="w-full lg:w-64 shrink-0">
-            <FilterSidebar />
+            <Suspense fallback={<div className="p-6 border border-white/5 rounded-sm bg-black animate-pulse h-64" />}>
+              <FilterSidebar />
+            </Suspense>
           </div>
 
           {/* Grid */}
