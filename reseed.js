@@ -237,6 +237,27 @@ const seedVehicles = [
     description: "The perfect balance of everyday usability and AMG performance. The E53 boasts a potent electrified inline-6 and stunning aesthetics.",
     features: ["3.0L Inline-6 Turbo with EQ Boost", "429 Horsepower", "AMG Performance 4MATIC+ AWD", "AMG SPEEDSHIFT TCT 9-Speed", "Burmester Surround Sound", "AMG Ride Control+ Suspension", "AMG Performance Steering Wheel"],
     featured: false
+  },
+  {
+    slug: "toyota-corolla-fielder-hybrid-2018",
+    title: "Toyota Corolla Fielder Hybrid G WXB",
+    year: 2018,
+    price: 1445860,
+    mileage: "101,000 km",
+    transmission: "Automatic",
+    fuelType: "Hybrid (Petrol)",
+    category: "Sedan",
+    images: Array.from({length: 20}, (_, i) => `/vehicles/corolla-fielder/fielder-${i + 1}.jpeg`),
+    description: "The Toyota Corolla Fielder Hybrid G WXB offers exceptional fuel efficiency, immense practicality, and unmatched reliability. Freshly imported from Japan in pristine condition.",
+    features: [
+      "1.5L 1NZ-1LM Hybrid Petrol Engine",
+      "Automatic Transmission",
+      "Right-Hand Drive (RHD)",
+      "2-Wheel Drive (2WD)",
+      "5 Doors, 5 Seats",
+      "Hybrid G WXB Trim"
+    ],
+    featured: true
   }
 ];
 
