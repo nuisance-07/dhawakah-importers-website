@@ -5,8 +5,40 @@ import PageTransition from "@/components/ui/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ImageGallery from "@/components/ui/ImageGallery";
 import { ArrowLeft, MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import type { Metadata } from "next";
 
 export const revalidate = 0;
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = await params;
+  const vehicle = await getVehicleBySlug(slug);
+  
+  if (!vehicle) {
+    return {
+      title: "Vehicle Not Found | Dhawakah Importers"
+    };
+  }
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('en-KE', { style: 'currency', currency: 'KES', maximumFractionDigits: 0 }).format(price);
+  };
+
+  return {
+    title: `${vehicle.title} ${vehicle.year} | Dhawakah Importers`,
+    description: vehicle.description || `Buy a premium ${vehicle.year} ${vehicle.title} from Dhawakah Importers for ${formatPrice(vehicle.price)}.`,
+    openGraph: {
+      title: `${vehicle.title} ${vehicle.year}`,
+      description: vehicle.description || `Available for ${formatPrice(vehicle.price)}`,
+      images: vehicle.images?.[0] ? [{ url: vehicle.images[0], width: 1200, height: 630 }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${vehicle.title} ${vehicle.year}`,
+      description: vehicle.description,
+      images: vehicle.images?.[0] ? [vehicle.images[0]] : [],
+    }
+  };
+}
 
 export default async function VehicleDetailPage({ params }: { params: { slug: string } }) {
   // Await the params before accessing slug
@@ -23,8 +55,34 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
   const whatsappMessage = encodeURIComponent(`Hello Dhawakah Importers, I am interested in the ${vehicle.title} (${vehicle.year}) priced at ${formatPrice(vehicle.price)}.`);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Vehicle",
+    "name": `${vehicle.title} ${vehicle.year}`,
+    "image": vehicle.images?.[0] ? `https://dhawakah-importers.vercel.app${vehicle.images[0]}` : undefined,
+    "description": vehicle.description,
+    "modelDate": vehicle.year.toString(),
+    "brand": {
+      "@type": "Brand",
+      "name": vehicle.title.split(" ")[0]
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://dhawakah-importers.vercel.app/inventory/${slug}`,
+      "priceCurrency": "KES",
+      "price": vehicle.price,
+      "itemCondition": "https://schema.org/UsedCondition",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
-    <PageTransition>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PageTransition>
       <div className="bg-dark-surface pt-32 pb-8 border-b border-white/10">
         <div className="container mx-auto px-4 md:px-8">
           <Link href="/inventory" className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-8 text-sm uppercase tracking-wider font-semibold">
@@ -150,5 +208,6 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
         </div>
       </div>
     </PageTransition>
+    </>
   );
 }

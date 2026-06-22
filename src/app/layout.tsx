@@ -18,8 +18,30 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dhawakah-importers.vercel.app'),
   title: "Dhawakah Importers | Premium Vehicles & Logistics",
   description: "Dhawakah Importers - Premium importer of vehicles, clearing & forwarding, and building/construction materials.",
+  openGraph: {
+    type: "website",
+    locale: "en_KE",
+    url: "https://dhawakah-importers.vercel.app",
+    siteName: "Dhawakah Importers",
+    title: "Dhawakah Importers | Premium Vehicles & Logistics",
+    description: "Premium importer of vehicles, clearing & forwarding, and building/construction materials in Kenya.",
+    images: [
+      {
+        url: "/generic/hero-bg.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Dhawakah Importers Vehicles",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dhawakah Importers | Premium Vehicles & Logistics",
+    description: "Premium importer of vehicles, clearing & forwarding, and building/construction materials in Kenya.",
+  },
 };
 
 export default function RootLayout({
