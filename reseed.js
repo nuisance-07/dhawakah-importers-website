@@ -300,6 +300,27 @@ const seedVehicles = [
       "Hybrid FX Trim"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-noah-si-2017",
+    title: "Toyota Noah SI",
+    year: 2017,
+    price: 1599000,
+    mileage: "131,000 km",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "Van",
+    images: Array.from({length: 21}, (_, i) => `/vehicles/toyota-noah-2017/noah-${i + 1}.jpeg`),
+    description: "The spacious and versatile 2017 Toyota Noah SI. A reliable 7-seater perfect for large families or business transport.",
+    features: [
+      "1980cc 3ZR Petrol Engine",
+      "Automatic Transmission",
+      "Right-Hand Drive (RHD)",
+      "2-Wheel Drive (2WD)",
+      "5 Doors, 7 Seats",
+      "SI Trim"
+    ],
+    featured: true
   }
 ];
 
