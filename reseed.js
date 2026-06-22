@@ -342,6 +342,27 @@ const seedVehicles = [
       "Premium SI WXB Trim"
     ],
     featured: true
+  },
+  {
+    slug: "land-rover-discovery-2017",
+    title: "Land Rover Discovery",
+    year: 2017,
+    price: 3510000,
+    mileage: "60,900 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    category: "SUV",
+    images: Array.from({length: 7}, (_, i) => `/vehicles/land-rover-discovery-2017/discovery-${i + 1}.jpeg`),
+    description: "The ultimate luxury SUV. This 2017 Land Rover Discovery offers unmatched off-road capability combined with a premium black-on-black aesthetic.",
+    features: [
+      "Diesel Engine",
+      "Automatic Transmission",
+      "Black Exterior & Black Interior",
+      "All-Wheel Drive (AWD)",
+      "Premium Entertainment System",
+      "Advanced Off-Road Capabilities"
+    ],
+    featured: true
   }
 ];
 
