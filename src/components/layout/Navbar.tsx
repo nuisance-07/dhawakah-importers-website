@@ -38,14 +38,22 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <Image 
-            src="/company-logo.png" 
+            src="/company-logo-transparent.png" 
             alt="Dhawakah Importers Logo" 
-            width={180} 
-            height={60} 
-            className="object-contain"
+            width={48} 
+            height={48} 
+            className="h-12 w-12 object-contain drop-shadow-md"
           />
+          <div className="flex flex-col">
+            <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase group-hover:text-primary transition-colors">
+              Dhawakah
+            </span>
+            <span className="font-sans text-xs tracking-[0.2em] text-secondary uppercase">
+              Importers
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

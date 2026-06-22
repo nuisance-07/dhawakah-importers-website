@@ -10,14 +10,22 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="mb-4 flex items-center gap-3">
               <Image 
-                src="/company-logo.png" 
+                src="/company-logo-transparent.png" 
                 alt="Dhawakah Importers Logo" 
-                width={180} 
-                height={60} 
-                className="object-contain"
+                width={48} 
+                height={48} 
+                className="h-12 w-12 object-contain drop-shadow-md"
               />
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase">
+                  Dhawakah
+                </span>
+                <span className="font-sans text-xs tracking-[0.2em] text-primary uppercase">
+                  Importers
+                </span>
+              </div>
             </Link>
             <p className="text-secondary text-sm leading-relaxed mb-6">
               Premium importer of luxury vehicles, offering exceptional clearing & forwarding services and high-quality building materials.
