@@ -512,6 +512,27 @@ const seedVehicles = [
       "Push Start Button"
     ],
     featured: true
+  },
+  {
+    slug: "jetour-x70-2018",
+    title: "Jetour X70",
+    year: 2018,
+    price: 4250000,
+    mileage: "Low Mileage",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "SUV",
+    images: Array.from({length: 4}, (_, i) => `/vehicles/jetour-x70-2018/jetour-${i + 1}.png`),
+    description: "The stylish 2018 Jetour X70. A premium SUV offering exceptional comfort, modern technology, and a spacious interior for the whole family.",
+    features: [
+      "1.5L Turbo Petrol Engine",
+      "Automatic Transmission",
+      "Premium Leather Interior",
+      "Modern Infotainment System",
+      "Spacious 7-Seater Option",
+      "Alloy Wheels"
+    ],
+    featured: true
   }
 ];
 
