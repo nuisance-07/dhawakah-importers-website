@@ -279,6 +279,27 @@ const seedVehicles = [
       "Premium Leather Interior"
     ],
     featured: true
+  },
+  {
+    slug: "suzuki-wagon-r-hybrid-2017",
+    title: "Suzuki Wagon R Hybrid FX",
+    year: 2017,
+    price: 625300,
+    mileage: "63,000 km",
+    transmission: "Automatic",
+    fuelType: "Hybrid (Petrol)",
+    category: "Sedan",
+    images: Array.from({length: 25}, (_, i) => `/vehicles/suzuki-wagon-r-2017/wagon-r-${i + 1}.jpeg`),
+    description: "The efficient and highly practical 2017 Suzuki Wagon R Hybrid FX. Perfect for city driving with exceptional fuel economy.",
+    features: [
+      "660cc Hybrid Petrol Engine",
+      "Automatic Transmission",
+      "Right-Hand Drive (RHD)",
+      "2-Wheel Drive (2WD)",
+      "5 Doors, 4 Seats",
+      "Hybrid FX Trim"
+    ],
+    featured: true
   }
 ];
 
