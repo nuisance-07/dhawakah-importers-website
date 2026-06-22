@@ -426,6 +426,27 @@ const seedVehicles = [
       "Android Multimedia & Reverse Camera"
     ],
     featured: true
+  },
+  {
+    slug: "porsche-cayenne-2016",
+    title: "Porsche Cayenne",
+    year: 2016,
+    price: 3900000,
+    mileage: "178,000 miles",
+    transmission: "Automatic",
+    fuelType: "Petrol Plug-in Hybrid",
+    category: "SUV",
+    images: Array.from({length: 12}, (_, i) => `/vehicles/porsche-cayenne-2016/porsche-${i + 1}.jpeg`),
+    description: "The dynamic 2016 Porsche Cayenne. A luxurious performance SUV featuring a 3.0L Petrol Plug-in Hybrid engine, offering an exhilarating driving experience alongside incredible efficiency.",
+    features: [
+      "3.0L Petrol Plug-in Hybrid",
+      "Automatic Gearbox",
+      "Right-Hand Drive (RHD)",
+      "SUV Body Type",
+      "Premium Leather Interior",
+      "Sport & Eco Driving Modes"
+    ],
+    featured: true
   }
 ];
 
