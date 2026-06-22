@@ -4,8 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-const VEHICLE_TYPES = ["All", "SUV", "Sedan", "Coupe"];
-const VEHICLE_MAKES = ["All", "BMW", "Mercedes Benz", "Toyota", "Lexus", "Range Rover", "Chevrolet", "Porsche"];
+const VEHICLE_TYPES = ["All", "SUV", "Sedan", "Coupe", "Pickup", "Van"];
+const VEHICLE_MAKES = ["All", "BMW", "Mercedes Benz", "Toyota", "Lexus", "Range Rover", "Land Rover", "Chevrolet", "Porsche", "Suzuki", "Bentley"];
 const VEHICLE_PRICES = ["All", "Under 10M", "10M - 20M", "Over 20M"];
 
 export default function FilterSidebar() {

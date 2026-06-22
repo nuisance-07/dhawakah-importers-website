@@ -384,6 +384,27 @@ const seedVehicles = [
       "Premium Interior"
     ],
     featured: true
+  },
+  {
+    slug: "bentley-continental-2006",
+    title: "Bentley Continental",
+    year: 2006,
+    price: 3250000,
+    mileage: "61,000 miles",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "Coupe",
+    images: Array.from({length: 9}, (_, i) => `/vehicles/bentley-continental-2006/bentley-${i + 1}.jpeg`),
+    description: "Experience unparalleled luxury with this 2006 Bentley Continental Coupe. With a powerful 6.0L engine, it offers a majestic driving experience that blends timeless design with exceptional performance.",
+    features: [
+      "6.0L Petrol Engine",
+      "Automatic Gearbox",
+      "Right-Hand Drive (RHD)",
+      "Coupe Body Type",
+      "Premium Leather Interior",
+      "Timeless Luxury Design"
+    ],
+    featured: true
   }
 ];
 
