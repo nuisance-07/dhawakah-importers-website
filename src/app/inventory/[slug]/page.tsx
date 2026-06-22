@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: `${vehicle.title} ${vehicle.year}`,
       description: vehicle.description || `Available for ${formatPrice(vehicle.price)}`,
+      url: `https://dhawakah-importers.vercel.app/inventory/${slug}`,
+      siteName: "Dhawakah Importers",
+      type: "website",
       images: vehicle.images?.[0] ? [{ url: vehicle.images[0], width: 1200, height: 630 }] : [],
     },
     twitter: {
