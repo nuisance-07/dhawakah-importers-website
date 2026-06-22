@@ -405,6 +405,27 @@ const seedVehicles = [
       "Timeless Luxury Design"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-prado-txl-2016",
+    title: "Toyota Land Cruiser Prado TX-L",
+    year: 2016,
+    price: 4972500,
+    mileage: "123,200 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    category: "SUV",
+    images: Array.from({length: 17}, (_, i) => `/vehicles/toyota-prado-txl-2016/prado-${i + 1}.jpeg`),
+    description: "The rugged yet luxurious 2016 Toyota Land Cruiser Prado TX-L. Equipped with a robust 2.8 D-4D diesel engine, 4WD capabilities, and a premium leather interior with advanced technology features.",
+    features: [
+      "2.8 D-4D Diesel Engine",
+      "Automatic Transmission",
+      "4-Wheel Drive (4WD)",
+      "7 Seats, Leather Interior",
+      "Sunroof & Heated/Cold Seats",
+      "Android Multimedia & Reverse Camera"
+    ],
+    featured: true
   }
 ];
 
