@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Phone, MapPin, Mail, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -10,14 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase">
-                  Dhawakah
-                </span>
-                <span className="font-sans text-xs tracking-[0.2em] text-primary uppercase">
-                  Importers
-                </span>
-              </div>
+              <Image 
+                src="/company-logo.png" 
+                alt="Dhawakah Importers Logo" 
+                width={180} 
+                height={60} 
+                className="object-contain"
+              />
             </Link>
             <p className="text-secondary text-sm leading-relaxed mb-6">
               Premium importer of luxury vehicles, offering exceptional clearing & forwarding services and high-quality building materials.

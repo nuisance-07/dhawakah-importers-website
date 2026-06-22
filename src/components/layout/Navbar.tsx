@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -38,14 +39,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex flex-col">
-            <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase group-hover:text-primary transition-colors">
-              Dhawakah
-            </span>
-            <span className="font-sans text-xs tracking-[0.2em] text-secondary uppercase">
-              Importers
-            </span>
-          </div>
+          <Image 
+            src="/company-logo.png" 
+            alt="Dhawakah Importers Logo" 
+            width={180} 
+            height={60} 
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
