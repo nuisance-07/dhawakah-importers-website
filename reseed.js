@@ -447,6 +447,27 @@ const seedVehicles = [
       "Sport & Eco Driving Modes"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-prado-green-2017",
+    title: "Toyota Land Cruiser Prado",
+    year: 2017,
+    price: 5460000,
+    mileage: "69,000 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    category: "SUV",
+    images: Array.from({length: 8}, (_, i) => `/vehicles/toyota-prado-green-2017/prado-green-${i + 1}.jpeg`),
+    description: "A stunning 2017 Toyota Land Cruiser Prado in a unique Green finish. This 7-seater SUV combines legendary off-road capabilities with family-friendly practicality and luxury.",
+    features: [
+      "2.8L Diesel Engine",
+      "Automatic Transmission",
+      "4-Wheel Drive (4WD)",
+      "7 Seats, 5 Doors",
+      "Right-Hand Drive (RHD)",
+      "Low Mileage (69,000 km)"
+    ],
+    featured: true
   }
 ];
 
