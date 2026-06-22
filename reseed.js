@@ -363,6 +363,27 @@ const seedVehicles = [
       "Advanced Off-Road Capabilities"
     ],
     featured: true
+  },
+  {
+    slug: "mercedes-benz-x-class-2019",
+    title: "Mercedes-Benz X-Class",
+    year: 2019,
+    price: 3835000,
+    mileage: "96,765 miles",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    category: "Pickup",
+    images: Array.from({length: 13}, (_, i) => `/vehicles/mercedes-benz-x-class-2019/xclass-${i + 1}.jpeg`),
+    description: "The premium 2019 Mercedes-Benz X-Class. A robust pickup truck that refuses to compromise on luxury, offering both immense utility and high-end comfort.",
+    features: [
+      "2.3L Diesel Engine",
+      "Automatic Gearbox",
+      "Right-Hand Drive (RHD)",
+      "4-Wheel Drive (4WD)",
+      "Pickup Body Type",
+      "Premium Interior"
+    ],
+    featured: true
   }
 ];
 
