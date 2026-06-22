@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Vehicle } from "@/data/vehicles";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Gauge, Settings, Fuel } from "lucide-react";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -32,16 +32,17 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
           {vehicle.title}
         </h3>
         
-        <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
           <span className="flex items-center gap-1.5">
+            <Gauge size={16} className="text-gray-500" />
             {vehicle.mileage}
           </span>
-          <span className="w-1 h-1 rounded-full bg-gray-600" />
           <span className="flex items-center gap-1.5">
+            <Settings size={16} className="text-gray-500" />
             {vehicle.transmission}
           </span>
-          <span className="w-1 h-1 rounded-full bg-gray-600" />
           <span className="flex items-center gap-1.5">
+            <Fuel size={16} className="text-gray-500" />
             {vehicle.fuelType}
           </span>
         </div>
