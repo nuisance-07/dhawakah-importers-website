@@ -4,7 +4,7 @@ import { getVehicleBySlug } from "@/data/vehicles";
 import PageTransition from "@/components/ui/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ImageGallery from "@/components/ui/ImageGallery";
-import { ArrowLeft, MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Calendar, Fuel, Gauge } from "lucide-react";
 import type { Metadata } from "next";
 
 export const revalidate = 0;
@@ -121,6 +121,40 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
           
           <div className="lg:col-span-2 space-y-12">
             <ScrollReveal delay={0.1}>
+              {/* Quick Specs Bar */}
+              <div className="flex flex-wrap items-center gap-8 md:gap-12 bg-black/50 p-6 rounded-sm border border-white/5 mb-8">
+                {/* YEAR */}
+                <div className="flex items-center gap-3">
+                  <Calendar className="text-gray-400 shrink-0" size={28} />
+                  <div className="flex flex-col">
+                    <span className="text-primary text-xs font-bold uppercase tracking-wider">Year</span>
+                    <span className="text-white text-lg font-bold">{vehicle.year}</span>
+                  </div>
+                </div>
+                
+                <div className="hidden md:block w-px h-10 bg-white/10"></div>
+                
+                {/* FUEL TYPE */}
+                <div className="flex items-center gap-3">
+                  <Fuel className="text-gray-400 shrink-0" size={28} />
+                  <div className="flex flex-col">
+                    <span className="text-primary text-xs font-bold uppercase tracking-wider">Fuel Type</span>
+                    <span className="text-white text-lg font-bold">{vehicle.fuelType || 'N/A'}</span>
+                  </div>
+                </div>
+
+                <div className="hidden md:block w-px h-10 bg-white/10"></div>
+                
+                {/* MILEAGE */}
+                <div className="flex items-center gap-3">
+                  <Gauge className="text-gray-400 shrink-0" size={28} />
+                  <div className="flex flex-col">
+                    <span className="text-primary text-xs font-bold uppercase tracking-wider">Mileage</span>
+                    <span className="text-white text-lg font-bold">{vehicle.mileage || 'N/A'}</span>
+                  </div>
+                </div>
+              </div>
+
               <ImageGallery images={vehicle.images} title={vehicle.title} />
             </ScrollReveal>
 
