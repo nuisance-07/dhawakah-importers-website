@@ -258,6 +258,27 @@ const seedVehicles = [
       "Hybrid G WXB Trim"
     ],
     featured: true
+  },
+  {
+    slug: "lexus-lx450-diesel-2018",
+    title: "Lexus LX450 Black",
+    year: 2018,
+    price: 13325000,
+    mileage: "41,129 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    category: "SUV",
+    images: Array.from({length: 18}, (_, i) => `/vehicles/lexus-lx450-2018/lx450-${i + 1}.jpeg`),
+    description: "The commanding 2018 Lexus LX450 Diesel. Combining extraordinary off-road capability with luxurious 7-seater comfort.",
+    features: [
+      "4.5L V8 Twin-Turbo Diesel Engine",
+      "Automatic Transmission",
+      "Right-Hand Drive (RHD)",
+      "4-Wheel Drive (4WD)",
+      "5 Doors, 7 Seats",
+      "Premium Leather Interior"
+    ],
+    featured: true
   }
 ];
 
