@@ -321,6 +321,27 @@ const seedVehicles = [
       "SI Trim"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-noah-pearl-2017",
+    title: "Toyota Noah SI WXB Pearl",
+    year: 2017,
+    price: 1638000,
+    mileage: "75,000 km",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "Van",
+    images: Array.from({length: 16}, (_, i) => `/vehicles/toyota-noah-pearl-2017/noah-pearl-${i + 1}.jpeg`),
+    description: "An elegant and reliable 2017 Toyota Noah in pristine Pearl White. The top-tier SI WXB trim offers luxury and immense practicality for the whole family.",
+    features: [
+      "1980cc 3ZR Petrol Engine",
+      "Automatic Transmission",
+      "Right-Hand Drive (RHD)",
+      "2-Wheel Drive (2WD)",
+      "5 Doors, 7 Seats",
+      "Premium SI WXB Trim"
+    ],
+    featured: true
   }
 ];
 
