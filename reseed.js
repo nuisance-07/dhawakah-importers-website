@@ -468,6 +468,27 @@ const seedVehicles = [
       "Low Mileage (69,000 km)"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-land-cruiser-black-2023",
+    title: "Toyota Land Cruiser",
+    year: 2023,
+    price: 15990000,
+    mileage: "0 KM",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "SUV",
+    images: Array.from({length: 6}, (_, i) => `/vehicles/toyota-land-cruiser-black-2023/land-cruiser-${i + 1}.jpeg`),
+    description: "Brand new 2023 Toyota Land Cruiser featuring a sleek Black exterior and a luxurious Red interior. Powered by a V6 Petrol engine, this flagship SUV comes equipped with premium 20-inch wheels.",
+    features: [
+      "V6 Petrol Engine",
+      "Automatic Transmission",
+      "0 KM (Brand New)",
+      "Red Premium Interior",
+      "20-inch Alloy Wheels",
+      "Right-Hand Drive (RHD)"
+    ],
+    featured: true
   }
 ];
 
