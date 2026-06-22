@@ -489,6 +489,29 @@ const seedVehicles = [
       "Right-Hand Drive (RHD)"
     ],
     featured: true
+  },
+  {
+    slug: "toyota-land-cruiser-zx-black-2016",
+    title: "Toyota Land Cruiser ZX V8",
+    year: 2016,
+    price: 6084000,
+    mileage: "39,000 km",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    category: "SUV",
+    images: Array.from({length: 20}, (_, i) => `/vehicles/toyota-land-cruiser-zx-black-2016/zx-${i + 1}.jpeg`),
+    description: "An exquisite 2016 Toyota Land Cruiser ZX 4.7 V8. This black beauty features a premium leather interior with heated seats, sunroof, and modern entertainment systems. 100% non-accidental with original mileage.",
+    features: [
+      "4.7L V8 Petrol Engine",
+      "Automatic Transmission",
+      "4-Wheel Drive (4WD)",
+      "7 Seats, Black Color",
+      "Sunroof & Alloy Wheels",
+      "Leather Heated Seats",
+      "Reverse View Camera & Sensors",
+      "Push Start Button"
+    ],
+    featured: true
   }
 ];
 
