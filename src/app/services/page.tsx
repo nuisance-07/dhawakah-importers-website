@@ -61,7 +61,7 @@ const services = [
       "Bulk ordering and logistics",
       "Quality assurance and compliance testing"
     ],
-    images: ["/services/logistics-clearing-port.png"]
+    images: Array.from({ length: 6 }).map((_, i) => `/services/port/port-${i + 1}.png`)
   }
 ];
 
