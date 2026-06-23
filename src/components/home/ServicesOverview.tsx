@@ -5,7 +5,7 @@ import AutoCarousel from "@/components/ui/AutoCarousel";
 
 const services = [
   {
-    title: "Imported Vehicles",
+    title: "Vehicle Importation",
     description: "Access our exclusive inventory of premium, hand-picked luxury vehicles imported directly for you.",
     icon: Car,
     href: "/inventory",
