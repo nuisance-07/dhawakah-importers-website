@@ -38,7 +38,7 @@ const services = [
       "Transparent fee structures",
       "Safe inland transportation"
     ],
-    image: "/services/logistics-1.jpeg"
+    image: "/services/logistics-clearing-port.png"
   },
   {
     id: "materials",
