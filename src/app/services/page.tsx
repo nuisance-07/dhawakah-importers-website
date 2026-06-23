@@ -39,7 +39,14 @@ const services = [
       "Transparent fee structures",
       "Safe inland transportation"
     ],
-    images: ["/services/logistics-clearing-port.png"]
+    images: [
+      "/services/materials/logistics-1.jpeg",
+      "/services/materials/logistics-2.jpeg",
+      "/services/materials/logistics-3.jpeg",
+      "/services/materials/logistics-4.jpeg",
+      "/services/materials/logistics-5.jpeg",
+      "/services/materials/logistics-6.jpeg"
+    ]
   },
   {
     id: "materials",
@@ -54,14 +61,7 @@ const services = [
       "Bulk ordering and logistics",
       "Quality assurance and compliance testing"
     ],
-    images: [
-      "/services/materials/logistics-1.jpeg",
-      "/services/materials/logistics-2.jpeg",
-      "/services/materials/logistics-3.jpeg",
-      "/services/materials/logistics-4.jpeg",
-      "/services/materials/logistics-5.jpeg",
-      "/services/materials/logistics-6.jpeg"
-    ]
+    images: ["/services/logistics-clearing-port.png"]
   }
 ];
 
