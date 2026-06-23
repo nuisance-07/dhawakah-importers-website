@@ -64,7 +64,11 @@ const services = [
       "Bulk ordering and logistics",
       "Quality assurance and compliance testing"
     ],
-    images: []
+    images: [
+      "/services/construction/construction-1.jpeg",
+      "/services/construction/construction-2.jpeg",
+      "/services/construction/construction-3.jpeg"
+    ]
   }
 ];
 
