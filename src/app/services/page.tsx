@@ -1,5 +1,6 @@
 import PageTransition from "@/components/ui/PageTransition";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import AutoCarousel from "@/components/ui/AutoCarousel";
 import { Car, PackageSearch, HardHat, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +24,7 @@ const services = [
       "Secure shipping and marine insurance",
       "Full KRA customs clearance"
     ],
-    image: "/services/logistics-2.jpeg"
+    images: Array.from({ length: 15 }).map((_, i) => `/services/cars/car-${i + 1}.jpeg`)
   },
   {
     id: "clearing",
@@ -38,7 +39,7 @@ const services = [
       "Transparent fee structures",
       "Safe inland transportation"
     ],
-    image: "/services/logistics-clearing-port.png"
+    images: ["/services/logistics-clearing-port.png"]
   },
   {
     id: "materials",
@@ -53,7 +54,14 @@ const services = [
       "Bulk ordering and logistics",
       "Quality assurance and compliance testing"
     ],
-    image: "/services/logistics-6.jpeg"
+    images: [
+      "/services/materials/logistics-1.jpeg",
+      "/services/materials/logistics-2.jpeg",
+      "/services/materials/logistics-3.jpeg",
+      "/services/materials/logistics-4.jpeg",
+      "/services/materials/logistics-5.jpeg",
+      "/services/materials/logistics-6.jpeg"
+    ]
   }
 ];
 
@@ -90,12 +98,12 @@ export default function ServicesPage() {
                     <div className="w-full lg:w-1/2">
                       <ScrollReveal direction={isEven ? "right" : "left"}>
                         <div className="aspect-square max-w-md mx-auto bg-white dark:bg-dark-surface border border-black/10 dark:border-white/10 rounded-sm relative flex items-center justify-center group overflow-hidden shadow-xl transition-colors duration-300">
-                          <Image 
-                            src={service.image} 
-                            alt={service.title} 
-                            fill 
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
+                          
+                          {/* Carousel */}
+                          <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                            <AutoCarousel images={service.images} interval={3500} />
+                          </div>
+
                           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-500" />
                           <service.icon size={80} className="text-white/90 absolute z-10 transition-transform duration-500 group-hover:scale-110 group-hover:text-primary" strokeWidth={1.5} />
                           <div className="absolute bottom-8 left-8 z-10">
