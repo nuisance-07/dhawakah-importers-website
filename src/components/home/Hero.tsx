@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import AnimatedLogo from "@/components/ui/AnimatedLogo";
 
 export default function Hero() {
   return (
@@ -20,10 +21,16 @@ export default function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 text-center mt-16">
-        <ScrollReveal delay={0.2} direction="up">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 uppercase">
-            Dhawakah Importers
-          </h1>
+        <ScrollReveal delay={0.2} direction="up" className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8">
+          <AnimatedLogo className="w-48 h-48 md:w-64 md:h-64 shrink-0" />
+          <div className="flex flex-col text-center md:text-left">
+            <span className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider text-white uppercase drop-shadow-xl">
+              Dhawakah
+            </span>
+            <span className="font-sans text-xl md:text-3xl tracking-[0.4em] text-gray-300 uppercase mt-2 drop-shadow-lg">
+              Importers
+            </span>
+          </div>
         </ScrollReveal>
         
         <ScrollReveal delay={0.4} direction="up">
