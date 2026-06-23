@@ -5,7 +5,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ArrowRight } from "lucide-react";
 
 export default async function FeaturedVehicles() {
-  const featuredVehicles = await getFeaturedVehicles();
+  const allFeatured = await getFeaturedVehicles();
+  const featuredVehicles = allFeatured.slice(0, 8);
 
   return (
     <section className="py-24 bg-background">
