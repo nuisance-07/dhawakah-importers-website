@@ -45,7 +45,10 @@ const services = [
       "/services/materials/logistics-3.jpeg",
       "/services/materials/logistics-4.jpeg",
       "/services/materials/logistics-5.jpeg",
-      "/services/materials/logistics-6.jpeg"
+      "/services/materials/logistics-6.jpeg",
+      "/services/port/port-1.png",
+      "/services/port/port-2.png",
+      "/services/port/port-3.png"
     ]
   },
   {
@@ -61,7 +64,7 @@ const services = [
       "Bulk ordering and logistics",
       "Quality assurance and compliance testing"
     ],
-    images: Array.from({ length: 6 }).map((_, i) => `/services/port/port-${i + 1}.png`)
+    images: []
   }
 ];
 
