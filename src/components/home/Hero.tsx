@@ -6,17 +6,15 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Video / Overlay */}
+      {/* Background Image / Overlay */}
       <div className="absolute inset-0 w-full h-full">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+        <Image 
+          src="/vehicles/hero-bg.jpeg"
+          alt="Dhawakah Importers Hero Background"
+          fill
+          priority
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/vehicles/hero-video.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white dark:to-[#0a0a0c]" />
       </div>
 
