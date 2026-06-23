@@ -16,7 +16,7 @@ export default function Hero() {
         >
           <source src="/vehicles/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0c]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white dark:to-[#0a0a0c]" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 text-center mt-16">
@@ -27,7 +27,7 @@ export default function Hero() {
         </ScrollReveal>
         
         <ScrollReveal delay={0.4} direction="up">
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light mb-12 tracking-wide">
+          <p className="text-xl md:text-2xl text-gray-100 dark:text-gray-300 max-w-3xl mx-auto font-light mb-12 tracking-wide">
             Your Premium Partner in Luxury Vehicles, Superior Building Materials & Expert Logistics.
           </p>
         </ScrollReveal>
@@ -51,7 +51,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-bounce">
-        <span className="text-xs uppercase tracking-widest text-white">Scroll Down</span>
+        <span className="text-xs uppercase tracking-widest text-gray-900 dark:text-white">Scroll Down</span>
         <div className="w-[1px] h-12 bg-primary" />
       </div>
     </section>

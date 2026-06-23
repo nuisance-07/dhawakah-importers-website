@@ -41,11 +41,11 @@ export default function WhyChooseUs() {
           <div>
             <ScrollReveal>
               <span className="text-primary tracking-[0.2em] uppercase text-sm font-semibold mb-2 block">The Dhawakah Difference</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-6">Why Choose Us</h2>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white uppercase mb-6">Why Choose Us</h2>
             </ScrollReveal>
             
             <ScrollReveal delay={0.2}>
-              <p className="text-gray-300 leading-relaxed text-lg mb-8">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 At Dhawakah Importers, we don't just sell cars and materials; we deliver peace of mind. Our extensive global network and deep industry expertise ensure that you receive premium products at competitive prices, with a seamless end-to-end experience.
               </p>
             </ScrollReveal>
@@ -61,8 +61,8 @@ export default function WhyChooseUs() {
                     <ShieldCheck size={18} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-white text-lg mb-1">{feature.title}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                    <h4 className="font-heading font-semibold text-gray-900 dark:text-white text-lg mb-1">{feature.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -72,10 +72,10 @@ export default function WhyChooseUs() {
           <div className="grid grid-cols-2 gap-4 md:gap-6">
             {stats.map((stat, index) => (
               <ScrollReveal key={index} delay={0.4 + (index * 0.1)} direction="up">
-                <div className="bg-black/40 border border-white/5 p-8 flex flex-col items-center justify-center text-center rounded-sm hover:border-primary/30 transition-colors h-full">
+                <div className="bg-white dark:bg-black/40 border border-gray-200 dark:border-white/5 p-8 flex flex-col items-center justify-center text-center rounded-sm hover:border-primary/50 dark:hover:border-primary/30 shadow-sm dark:shadow-none transition-colors h-full">
                   <stat.icon size={36} className="text-primary mb-4" />
-                  <div className="font-heading font-bold text-4xl md:text-5xl text-white mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">{stat.label}</div>
+                  <div className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}

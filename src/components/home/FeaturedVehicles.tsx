@@ -13,13 +13,13 @@ export default async function FeaturedVehicles() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <ScrollReveal>
             <span className="text-primary tracking-[0.2em] uppercase text-sm font-semibold mb-2 block">Our Showroom</span>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">Featured Vehicles</h2>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white uppercase">Featured Vehicles</h2>
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
             <Link 
               href="/inventory"
-              className="group flex items-center gap-2 text-white hover:text-primary transition-colors font-medium"
+              className="group flex items-center gap-2 text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors font-medium"
             >
               View Full Inventory
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

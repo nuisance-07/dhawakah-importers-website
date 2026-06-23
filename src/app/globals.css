@@ -4,14 +4,16 @@
 
 @layer base {
   :root {
+    --background: #f8f9fa; /* Slightly off-white for a cleaner look */
+    --foreground: #0f172a; /* Slate 900 for dark crisp text */
+    --dark-surface: #ffffff; /* White cards in light mode */
+  }
+
+  .dark {
     --background: #0a0a0c;
     --foreground: #f3f4f6;
+    --dark-surface: #121214;
   }
-}
-
-:root {
-  --background: #0a0a0c;
-  --foreground: #f3f4f6;
 }
 
 body {

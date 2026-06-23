@@ -86,19 +86,19 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageTransition>
-      <div className="bg-dark-surface pt-32 pb-8 border-b border-white/10">
+      <div className="bg-white dark:bg-dark-surface pt-32 pb-8 border-b border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none">
         <div className="container mx-auto px-4 md:px-8">
-          <Link href="/inventory" className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-8 text-sm uppercase tracking-wider font-semibold">
+          <Link href="/inventory" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mb-8 text-sm uppercase tracking-wider font-semibold">
             <ArrowLeft size={16} /> Back to Inventory
           </Link>
           
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase mb-2">
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white uppercase mb-2">
                   {vehicle.title}
                 </h1>
-                <div className="text-xl text-gray-400">{vehicle.year} • {vehicle.category}</div>
+                <div className="text-xl text-gray-600 dark:text-gray-400">{vehicle.year} • {vehicle.category}</div>
               </div>
               
               <div className="text-left md:text-right">
@@ -122,35 +122,35 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
           <div className="lg:col-span-2 space-y-12">
             <ScrollReveal delay={0.1}>
               {/* Quick Specs Bar */}
-              <div className="flex flex-wrap items-center gap-8 md:gap-12 bg-black/50 p-6 rounded-sm border border-white/5 mb-8">
+              <div className="flex flex-wrap items-center gap-8 md:gap-12 bg-gray-50 dark:bg-black/50 p-6 rounded-sm border border-gray-200 dark:border-white/5 mb-8">
                 {/* YEAR */}
                 <div className="flex items-center gap-3">
                   <Calendar className="text-gray-400 shrink-0" size={28} />
                   <div className="flex flex-col">
                     <span className="text-primary text-xs font-bold uppercase tracking-wider">Year</span>
-                    <span className="text-white text-lg font-bold">{vehicle.year}</span>
+                    <span className="text-gray-900 dark:text-white text-lg font-bold">{vehicle.year}</span>
                   </div>
                 </div>
                 
-                <div className="hidden md:block w-px h-10 bg-white/10"></div>
+                <div className="hidden md:block w-px h-10 bg-gray-300 dark:bg-white/10"></div>
                 
                 {/* FUEL TYPE */}
                 <div className="flex items-center gap-3">
                   <Fuel className="text-gray-400 shrink-0" size={28} />
                   <div className="flex flex-col">
                     <span className="text-primary text-xs font-bold uppercase tracking-wider">Fuel Type</span>
-                    <span className="text-white text-lg font-bold">{vehicle.fuelType || 'N/A'}</span>
+                    <span className="text-gray-900 dark:text-white text-lg font-bold">{vehicle.fuelType || 'N/A'}</span>
                   </div>
                 </div>
 
-                <div className="hidden md:block w-px h-10 bg-white/10"></div>
+                <div className="hidden md:block w-px h-10 bg-gray-300 dark:bg-white/10"></div>
                 
                 {/* MILEAGE */}
                 <div className="flex items-center gap-3">
                   <Gauge className="text-gray-400 shrink-0" size={28} />
                   <div className="flex flex-col">
                     <span className="text-primary text-xs font-bold uppercase tracking-wider">Mileage</span>
-                    <span className="text-white text-lg font-bold">{vehicle.mileage || 'N/A'}</span>
+                    <span className="text-gray-900 dark:text-white text-lg font-bold">{vehicle.mileage || 'N/A'}</span>
                   </div>
                 </div>
               </div>
@@ -159,15 +159,15 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <h2 className="font-heading text-2xl font-semibold text-white mb-6 uppercase tracking-wide">Vehicle Description</h2>
-              <p className="text-gray-300 leading-relaxed text-lg mb-8">
+              <h2 className="font-heading text-2xl font-semibold text-gray-900 dark:text-white mb-6 uppercase tracking-wide">Vehicle Description</h2>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 {vehicle.description}
               </p>
 
               {vehicle.features && vehicle.features.length > 0 && (
                 <ul className="space-y-3">
                   {vehicle.features.map((feature: string, idx: number) => (
-                    <li key={idx} className="flex items-center gap-3 text-gray-200 text-lg">
+                    <li key={idx} className="flex items-center gap-3 text-gray-600 dark:text-gray-200 text-lg">
                       <div className="w-2 h-2 bg-primary rotate-45 shrink-0" />
                       <span>{feature}</span>
                     </li>
@@ -179,8 +179,8 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
           <div className="lg:col-span-1 space-y-8">
             <ScrollReveal delay={0.2} direction="left">
-              <div className="bg-black border border-white/5 p-8 rounded-sm">
-                <h3 className="font-heading text-xl font-semibold text-white mb-6 uppercase tracking-wide border-b border-white/10 pb-4">
+              <div className="bg-gray-50 dark:bg-black border border-gray-200 dark:border-white/5 p-8 rounded-sm shadow-sm dark:shadow-none">
+                <h3 className="font-heading text-xl font-semibold text-gray-900 dark:text-white mb-6 uppercase tracking-wide border-b border-gray-200 dark:border-white/10 pb-4">
                   Specifications
                 </h3>
                 
@@ -193,9 +193,9 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                     { label: "Fuel Type", value: vehicle.fuelType },
                     { label: "Body Style", value: vehicle.category },
                   ].map((spec, i) => (
-                    <li key={i} className="flex justify-between items-center py-2 border-b border-white/5 last:border-0">
-                      <span className="text-gray-400">{spec.label}</span>
-                      <span className="text-white font-medium text-right">{spec.value}</span>
+                    <li key={i} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-white/5 last:border-0">
+                      <span className="text-gray-600 dark:text-gray-400">{spec.label}</span>
+                      <span className="text-gray-900 dark:text-white font-medium text-right">{spec.value}</span>
                     </li>
                   ))}
                 </ul>
@@ -204,7 +204,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
             <ScrollReveal delay={0.3} direction="left">
               <div className="bg-primary/5 border border-primary/20 p-8 rounded-sm space-y-4">
-                <h3 className="font-heading text-xl font-semibold text-white mb-4 uppercase tracking-wide">
+                <h3 className="font-heading text-xl font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wide">
                   Interested in this vehicle?
                 </h3>
                 
@@ -220,7 +220,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                 
                 <a 
                   href="tel:+254746978736"
-                  className="w-full flex items-center justify-center gap-2 bg-transparent border-2 border-white/20 text-white py-4 rounded-sm font-semibold hover:border-primary hover:text-primary transition-colors"
+                  className="w-full flex items-center justify-center gap-2 bg-transparent border-2 border-gray-300 dark:border-white/20 text-gray-900 dark:text-white py-4 rounded-sm font-semibold hover:border-primary hover:text-primary dark:hover:text-primary transition-colors"
                 >
                   <Phone size={20} />
                   Call Now
@@ -230,11 +230,11 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
             <ScrollReveal delay={0.4} direction="left">
               <div className="space-y-4">
-                <div className="flex gap-3 text-gray-300">
+                <div className="flex gap-3 text-gray-600 dark:text-gray-300">
                   <CheckCircle2 className="text-primary shrink-0" />
                   <span className="text-sm">Verified Imports: 100% authentic and thoroughly inspected.</span>
                 </div>
-                <div className="flex gap-3 text-gray-300">
+                <div className="flex gap-3 text-gray-600 dark:text-gray-300">
                   <CheckCircle2 className="text-primary shrink-0" />
                   <span className="text-sm">We handle all KRA customs clearance and port charges.</span>
                 </div>

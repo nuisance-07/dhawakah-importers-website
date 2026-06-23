@@ -62,9 +62,9 @@ export default function InventoryClient({ allVehicles }: { allVehicles: Vehicle[
             ))}
           </div>
         ) : (
-          <div className="text-center py-24 bg-black/30 border border-white/5 rounded-sm">
-            <h3 className="text-xl text-white font-semibold mb-2">No vehicles found</h3>
-            <p className="text-gray-400">Try adjusting your filters to see more results.</p>
+          <div className="text-center py-24 bg-gray-50 dark:bg-black/30 border border-gray-200 dark:border-white/5 rounded-sm shadow-sm dark:shadow-none">
+            <h3 className="text-xl text-gray-900 dark:text-white font-semibold mb-2">No vehicles found</h3>
+            <p className="text-gray-500 dark:text-gray-400">Try adjusting your filters to see more results.</p>
           </div>
         )}
       </div>

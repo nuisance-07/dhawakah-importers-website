@@ -75,7 +75,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 key={index}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all",
-                  index === selectedIndex ? "bg-primary w-6" : "bg-white/50 hover:bg-white"
+                  index === selectedIndex ? "bg-primary w-6" : "bg-gray-400 dark:bg-white/50 hover:bg-gray-900 dark:hover:bg-white"
                 )}
                 onClick={() => {
                   if (emblaApi) emblaApi.scrollTo(index);

@@ -38,14 +38,14 @@ export default function FilterSidebar() {
 
   return (
     <ScrollReveal direction="right" delay={0.1}>
-      <div className="bg-black border border-white/5 p-6 rounded-sm sticky top-32">
-        <h3 className="font-heading font-semibold text-white mb-6 uppercase tracking-wider text-sm border-b border-white/10 pb-4">
+      <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/5 p-6 rounded-sm sticky top-32 shadow-sm dark:shadow-none">
+        <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-200 dark:border-white/10 pb-4">
           Filters
         </h3>
         
         <div className="space-y-8">
           <div>
-            <h4 className="text-sm font-medium text-gray-300 mb-4">Vehicle Type</h4>
+            <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-4">Vehicle Type</h4>
             <div className="space-y-3">
               {VEHICLE_TYPES.map((type) => {
                 const isActive = currentType === type;
@@ -58,10 +58,10 @@ export default function FilterSidebar() {
                       onChange={() => handleFilterChange("type", type)}
                       className="hidden"
                     />
-                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-white/20 group-hover:border-primary/50'}`}>
+                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-gray-300 dark:border-white/20 group-hover:border-primary/50 dark:group-hover:border-primary/50'}`}>
                       {isActive && <div className="w-2 h-2 bg-primary rounded-sm" />}
                     </div>
-                    <span className={`text-sm transition-colors ${isActive ? 'text-white font-medium' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                    <span className={`text-sm transition-colors ${isActive ? 'text-gray-900 dark:text-white font-medium' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200'}`}>
                       {type}
                     </span>
                   </label>
@@ -71,7 +71,7 @@ export default function FilterSidebar() {
           </div>
 
           <div>
-            <h4 className="text-sm font-medium text-gray-300 mb-4">Make</h4>
+            <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-4">Make</h4>
             <div className="space-y-3">
               {VEHICLE_MAKES.map((make) => {
                 const isActive = currentMake === make;
@@ -84,10 +84,10 @@ export default function FilterSidebar() {
                       onChange={() => handleFilterChange("make", make)}
                       className="hidden"
                     />
-                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-white/20 group-hover:border-primary/50'}`}>
+                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-gray-300 dark:border-white/20 group-hover:border-primary/50 dark:group-hover:border-primary/50'}`}>
                       {isActive && <div className="w-2 h-2 bg-primary rounded-sm" />}
                     </div>
-                    <span className={`text-sm transition-colors ${isActive ? 'text-white font-medium' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                    <span className={`text-sm transition-colors ${isActive ? 'text-gray-900 dark:text-white font-medium' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200'}`}>
                       {make}
                     </span>
                   </label>
@@ -97,7 +97,7 @@ export default function FilterSidebar() {
           </div>
 
           <div>
-            <h4 className="text-sm font-medium text-gray-300 mb-4">Price Range</h4>
+            <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-4">Price Range</h4>
             <div className="space-y-3">
               {VEHICLE_PRICES.map((price) => {
                 const isActive = currentPrice === price;
@@ -110,10 +110,10 @@ export default function FilterSidebar() {
                       onChange={() => handleFilterChange("price", price)}
                       className="hidden"
                     />
-                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-white/20 group-hover:border-primary/50'}`}>
+                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-colors ${isActive ? 'border-primary' : 'border-gray-300 dark:border-white/20 group-hover:border-primary/50 dark:group-hover:border-primary/50'}`}>
                       {isActive && <div className="w-2 h-2 bg-primary rounded-sm" />}
                     </div>
-                    <span className={`text-sm transition-colors ${isActive ? 'text-white font-medium' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                    <span className={`text-sm transition-colors ${isActive ? 'text-gray-900 dark:text-white font-medium' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200'}`}>
                       {price}
                     </span>
                   </label>

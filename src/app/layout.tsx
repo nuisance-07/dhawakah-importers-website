@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Tracker from "@/components/analytics/Tracker";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,13 +54,21 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
-        <Navbar />
-        <main className="flex-grow flex flex-col">{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
-        <Tracker />
+      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden transition-colors duration-300">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="flex-grow flex flex-col">{children}</main>
+          <Footer />
+          <FloatingWhatsApp />
+          <Tracker />
+        </ThemeProvider>
       </body>
     </html>
   );

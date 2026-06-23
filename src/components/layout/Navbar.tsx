@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,8 +34,8 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b border-transparent",
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-white/10 shadow-lg py-4"
-          : "bg-transparent py-6"
+          ? "bg-white/90 dark:bg-black/80 backdrop-blur-md border-gray-200 dark:border-white/10 shadow-sm dark:shadow-lg py-4"
+          : "bg-white/50 dark:bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -47,10 +48,10 @@ export default function Navbar() {
             className="h-12 w-12 object-contain drop-shadow-md"
           />
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase group-hover:text-primary transition-colors">
+            <span className="font-heading font-bold text-2xl tracking-wider text-gray-900 dark:text-white uppercase group-hover:text-primary transition-colors">
               Dhawakah
             </span>
-            <span className="font-sans text-xs tracking-[0.2em] text-secondary uppercase">
+            <span className="font-sans text-xs tracking-[0.2em] text-gray-500 dark:text-secondary uppercase">
               Importers
             </span>
           </div>
@@ -64,7 +65,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "font-sans text-sm font-medium tracking-wide transition-colors hover:text-primary relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full",
-                pathname === link.href ? "text-primary after:w-full" : "text-gray-300"
+                pathname === link.href ? "text-primary after:w-full" : "text-gray-600 dark:text-gray-300"
               )}
             >
               {link.name}
@@ -76,29 +77,33 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
+          <ThemeToggle />
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button
+            className="text-gray-900 dark:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 py-6 px-4 flex flex-col gap-4 shadow-xl">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-black/95 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 py-6 px-4 flex flex-col gap-4 shadow-xl">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
-                "text-lg font-medium py-2 border-b border-white/5 transition-colors",
-                pathname === link.href ? "text-primary" : "text-gray-300 hover:text-white"
+                "text-lg font-medium py-2 border-b border-gray-100 dark:border-white/5 transition-colors",
+                pathname === link.href ? "text-primary" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
               )}
             >
               {link.name}
